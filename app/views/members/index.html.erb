@@ -1,1 +1,10 @@
 <h1>Team Members</h1>
+
+<% @members.each do |member| %>
+<ul>
+<li><%= link_to member.first_name, member %> <%= link_to member.last_name, member %> - <%= member.domain %>
+</li>
+</ul>
+<% end %>
+
+<%= link_to "Home", root_path %> | <%= link_to 'Logout', destroy_user_session_path, method: :delete%>
